@@ -1,26 +1,161 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #faf9f7;
+  --foreground: #1a1a1a;
+  --charcoal: #1a1a1a;
+  --charcoal-light: #2d2d2d;
+  --gold: #c9a962;
+  --gold-light: #d4bc7a;
+  --gold-dark: #a88b4a;
+  --beige: #e8e0d5;
+  --beige-light: #f5f0ea;
+  --wood: #8b6914;
+  --wood-light: #a67c3d;
+  --white: #ffffff;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-charcoal: var(--charcoal);
+  --color-charcoal-light: var(--charcoal-light);
+  --color-gold: var(--gold);
+  --color-gold-light: var(--gold-light);
+  --color-gold-dark: var(--gold-dark);
+  --color-beige: var(--beige);
+  --color-beige-light: var(--beige-light);
+  --color-wood: var(--wood);
+  --color-wood-light: var(--wood-light);
+  --font-sans: var(--font-inter);
+  --font-serif: var(--font-cormorant);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-inter), system-ui, sans-serif;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: var(--gold);
+  color: var(--charcoal);
+}
+
+.font-serif {
+  font-family: var(--font-cormorant), Georgia, serif;
+}
+
+/* Luxury scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--beige-light);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--gold);
+  border-radius: 4px;
+}
+
+/* Page transition overlay */
+.page-transition-enter {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.page-transition-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+/* Gold gradient text */
+.text-gold-gradient {
+  background: linear-gradient(135deg, var(--gold-dark), var(--gold), var(--gold-light));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Premium button styles */
+.btn-primary {
+  @apply inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-charcoal text-white text-sm font-medium tracking-wider uppercase transition-all duration-300 hover:bg-gold hover:text-charcoal;
+}
+
+.btn-outline {
+  @apply inline-flex items-center justify-center gap-2 px-8 py-3.5 border border-charcoal text-charcoal text-sm font-medium tracking-wider uppercase transition-all duration-300 hover:bg-charcoal hover:text-white;
+}
+
+.btn-gold {
+  @apply inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-gold text-charcoal text-sm font-medium tracking-wider uppercase transition-all duration-300 hover:bg-gold-dark hover:text-white;
+}
+
+/* Section spacing */
+.section-padding {
+  @apply py-20 md:py-28 lg:py-32;
+}
+
+.container-luxury {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+/* Image reveal */
+.image-reveal {
+  clip-path: inset(0 100% 0 0);
+  animation: revealImage 1.2s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+}
+
+@keyframes revealImage {
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+/* Line animation */
+.line-grow {
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: lineGrow 0.8s ease forwards;
+}
+
+@keyframes lineGrow {
+  to {
+    transform: scaleX(1);
+  }
+}
+
+/* Parallax helper */
+.parallax-section {
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+}
+
+@media (max-width: 768px) {
+  .parallax-section {
+    background-attachment: scroll;
+  }
+}
+
+/* Focus styles for accessibility */
+:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+}
+
+/* Skip link */
+.skip-link {
+  @apply sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-gold focus:text-charcoal;
 }

@@ -1,0 +1,7 @@
+# Aaren International Pro
+# https://www.aarenintpro.com
+
+User-agent: *
+Allow: /
+
+Sitemap: https://www.aarenintpro.com/sitemap.xml

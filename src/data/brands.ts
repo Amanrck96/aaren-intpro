@@ -1,0 +1,147 @@
+export interface Brand {
+  id: string;
+  name: string;
+  logo: string;
+  description: string;
+  productRange: string[];
+  story: string;
+  country: string;
+  category: string[];
+}
+
+export const brands: Brand[] = [
+  {
+    id: "alcarol",
+    name: "Alcarol",
+    logo: "https://images.unsplash.com/photo-1560179707-f14e90ef3623?w=200&q=80",
+    description: "Italian design studio creating unique decorative surfaces from reclaimed materials.",
+    productRange: ["Decorative Surfaces", "Tables", "Wall Panels"],
+    story: "Alcarol transforms natural materials into sculptural surfaces, preserving the memory of wood and stone in contemporary design pieces.",
+    country: "Italy",
+    category: ["surfaces", "furniture"],
+  },
+  {
+    id: "inclass",
+    name: "Inclass Veneers",
+    logo: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=200&q=80",
+    description: "Premium engineered and natural veneers with exceptional grain matching capabilities.",
+    productRange: ["Natural Veneers", "Engineered Veneers", "Dyed Veneers"],
+    story: "With decades of expertise, Inclass delivers veneers that set the standard for luxury interior applications worldwide.",
+    country: "Spain",
+    category: ["surfaces"],
+  },
+  {
+    id: "peel-ply",
+    name: "PEEL Ply",
+    logo: "https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?w=200&q=80",
+    description: "Innovative decorative plywood and veneer solutions for architects and designers.",
+    productRange: ["Decorative Plywood", "Veneers", "Panels"],
+    story: "PEEL Ply combines technical innovation with aesthetic excellence, offering surfaces that inspire creative expression.",
+    country: "Germany",
+    category: ["surfaces", "plywood"],
+  },
+  {
+    id: "sibu",
+    name: "SIBU Design",
+    logo: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=200&q=80",
+    description: "Architectural surface design with metallic, textured, and bespoke decorative panels.",
+    productRange: ["Metal Surfaces", "3D Panels", "Custom Designs"],
+    story: "SIBU Design pushes the boundaries of surface design, creating materials that become architectural statements.",
+    country: "Austria",
+    category: ["surfaces"],
+  },
+  {
+    id: "hafele",
+    name: "Häfele",
+    logo: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=200&q=80",
+    description: "World-leading furniture and architectural hardware with 100,000+ products.",
+    productRange: ["Furniture Hardware", "Kitchen Fittings", "Door Hardware", "Lighting"],
+    story: "Since 1923, Häfele has been the partner of choice for architects and furniture makers seeking precision hardware.",
+    country: "Germany",
+    category: ["hardware"],
+  },
+  {
+    id: "blum",
+    name: "Blum",
+    logo: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=200&q=80",
+    description: "Austrian innovation in lift systems, hinges, and drawer runners for premium kitchens.",
+    productRange: ["Lift Systems", "Hinges", "Drawer Runners", "Box Systems"],
+    story: "Blum's motion technologies define the premium kitchen experience with silent, effortless operation.",
+    country: "Austria",
+    category: ["hardware", "kitchen"],
+  },
+  {
+    id: "hettich",
+    name: "Hettich",
+    logo: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=200&q=80",
+    description: "German engineering excellence in furniture fittings and architectural hardware.",
+    productRange: ["Drawer Systems", "Sliding Doors", "Hinges", "Handles"],
+    story: "Hettich combines German precision with design innovation, serving the world's finest furniture manufacturers.",
+    country: "Germany",
+    category: ["hardware"],
+  },
+  {
+    id: "dorma",
+    name: "Dormakaba",
+    logo: "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=200&q=80",
+    description: "Global leader in access solutions, door hardware, and architectural fittings.",
+    productRange: ["Door Closers", "Access Control", "Glass Fittings", "Handles"],
+    story: "Dormakaba secures and connects spaces worldwide with solutions that blend security and design.",
+    country: "Switzerland",
+    category: ["hardware", "doors"],
+  },
+  {
+    id: "italian-bath",
+    name: "ArtCeram",
+    logo: "https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=200&q=80",
+    description: "Italian luxury sanitaryware combining art, design, and functionality.",
+    productRange: ["Basins", "WCs", "Bidets", "Vanities"],
+    story: "ArtCeram transforms bathrooms into galleries of Italian design, where every piece is a work of art.",
+    country: "Italy",
+    category: ["bagno"],
+  },
+  {
+    id: "wellness-spa",
+    name: "Effegibi",
+    logo: "https://images.unsplash.com/photo-1600607687644-c7171b42498f?w=200&q=80",
+    description: "Italian wellness and sauna systems for luxury residential and hospitality projects.",
+    productRange: ["Saunas", "Steam Rooms", "Hammam", "Accessories"],
+    story: "Effegibi has been crafting wellness experiences since 1987, bringing Italian spa culture to homes worldwide.",
+    country: "Italy",
+    category: ["wellness"],
+  },
+  {
+    id: "flooring-pro",
+    name: "Quick-Step",
+    logo: "https://images.unsplash.com/photo-1615874959477-df983607c3f1?w=200&q=80",
+    description: "Premium laminate and engineered wood flooring with patented locking systems.",
+    productRange: ["Laminate", "Engineered Wood", "Vinyl", "Accessories"],
+    story: "Quick-Step pioneered click-lock flooring technology, making premium floors accessible and easy to install.",
+    country: "Belgium",
+    category: ["flooring"],
+  },
+  {
+    id: "lighting-design",
+    name: "Flos",
+    logo: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=200&q=80",
+    description: "Iconic Italian lighting design from masters of architectural illumination.",
+    productRange: ["Pendants", "Wall Lights", "Floor Lamps", "Architectural"],
+    story: "Flos collaborates with the world's greatest designers to create lighting that becomes timeless art.",
+    country: "Italy",
+    category: ["lighting"],
+  },
+];
+
+export const brandCategories = [
+  { id: "all", label: "All Brands" },
+  { id: "surfaces", label: "Surfaces" },
+  { id: "hardware", label: "Hardware" },
+  { id: "kitchen", label: "Kitchen" },
+  { id: "bagno", label: "Bagno" },
+  { id: "wellness", label: "Wellness" },
+  { id: "flooring", label: "Flooring" },
+  { id: "lighting", label: "Lighting" },
+  { id: "doors", label: "Doors" },
+  { id: "plywood", label: "Plywood" },
+  { id: "furniture", label: "Furniture" },
+];
