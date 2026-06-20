@@ -31,9 +31,10 @@ export function Header() {
       <TopBar />
       <div
         className={cn(
-          "transition-all duration-500",
+          "relative transition-all duration-500",
           isScrolled ? "bg-white/95 backdrop-blur-md shadow-sm" : "bg-white"
         )}
+        onMouseLeave={() => setActiveMega(null)}
       >
         <div className="container-luxury flex items-center justify-between h-16 lg:h-20">
           <Link href="/" className="flex flex-col" aria-label="Aaren International Pro Home">
@@ -51,7 +52,6 @@ export function Header() {
                 key={link.label}
                 className="relative"
                 onMouseEnter={() => link.hasMega && setActiveMega(link.megaKey!)}
-                onMouseLeave={() => link.hasMega && setActiveMega(null)}
               >
                 <Link
                   href={link.href}
@@ -63,13 +63,6 @@ export function Header() {
                   {link.label}
                   {link.hasMega && <ChevronDown className="w-3.5 h-3.5" />}
                 </Link>
-                {link.hasMega && (
-                  <MegaMenu
-                    type={link.megaKey!}
-                    isOpen={activeMega === link.megaKey}
-                    onClose={() => setActiveMega(null)}
-                  />
-                )}
               </div>
             ))}
           </nav>
@@ -97,6 +90,18 @@ export function Header() {
             </button>
           </div>
         </div>
+
+        {/* Mega menus — rendered here so left-0/right-0 spans the full header */}
+        <MegaMenu
+          type="about"
+          isOpen={activeMega === "about"}
+          onClose={() => setActiveMega(null)}
+        />
+        <MegaMenu
+          type="products"
+          isOpen={activeMega === "products"}
+          onClose={() => setActiveMega(null)}
+        />
 
         <AnimatePresence>
           {searchOpen && (
