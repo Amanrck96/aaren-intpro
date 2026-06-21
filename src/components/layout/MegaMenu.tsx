@@ -13,29 +13,43 @@ interface MegaMenuProps {
 
 const productGroups = [
   {
-    category: "Wood & Panels",
-    items: ["Plywood", "Blockboard", "Veneers", "Laminates", "Decorative Surfaces"],
+    category: "Panels & Surfaces",
+    items: [
+      { label: "Plywood", href: "/products#plywood" },
+      { label: "Decorative Surfaces", href: "/products#decorative-surfaces" },
+      { label: "Cladding & Decking", href: "/products#cladding-decking" },
+      { label: "Wooden Flooring", href: "/products#wooden-flooring" },
+      { label: "Screens", href: "/products#screens" },
+    ],
   },
   {
-    category: "Outdoor & Flooring",
-    items: ["Cladding & Decking", "Flooring"],
+    category: "Doors & Partitions",
+    items: [
+      { label: "Doors + Windows", href: "/products#doors-windows" },
+      { label: "Doors + Partitions", href: "/products#doors-partitions" },
+    ],
   },
   {
-    category: "Living Spaces",
-    items: ["Doors & Windows", "Kitchen & Wardrobe", "Partitions", "Furniture"],
+    category: "Living & Kitchen",
+    items: [
+      { label: "Kitchen & Wardrobe", href: "/products#kitchen-wardrobe" },
+      { label: "Hardware", href: "/products#hardware" },
+      { label: "FFNE", href: "/products#ffne" },
+    ],
   },
   {
-    category: "Premium Collections",
-    items: ["Hardware", "Lighting", "Carpets", "Bagno Collection", "Wellness Collection"],
+    category: "Bagno Collections",
+    items: [
+      { label: "Bagno - Tiles", href: "/products#bagno-tiles" },
+      { label: "Bagno - S+F", href: "/products#bagno-sf" },
+      { label: "Bagno - Wellness", href: "/products#bagno-wellness" },
+      { label: "Bagno - M+A", href: "/products#bagno-ma" },
+    ],
   },
 ];
 
 export function MegaMenu({ type, isOpen, onClose }: MegaMenuProps) {
   const aboutLinks = navLinks.about;
-  const productLinks = navLinks.products;
-
-  const getProductHref = (label: string) =>
-    productLinks.find((p) => p.label === label)?.href ?? "/products";
 
   return (
     <AnimatePresence>
@@ -92,13 +106,13 @@ export function MegaMenu({ type, isOpen, onClose }: MegaMenuProps) {
                     </p>
                     <ul className="space-y-0.5">
                       {group.items.map((item) => (
-                        <li key={item}>
+                        <li key={item.label}>
                           <Link
-                            href={getProductHref(item)}
+                            href={item.href}
                             onClick={onClose}
                             className="group flex items-center justify-between px-2 py-2 text-sm text-charcoal/75 hover:text-gold-dark hover:bg-beige-light rounded transition-all"
                           >
-                            <span>{item}</span>
+                            <span>{item.label}</span>
                             <ChevronRight className="w-3 h-3 opacity-0 group-hover:opacity-100 text-gold transition-opacity" />
                           </Link>
                         </li>

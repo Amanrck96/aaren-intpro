@@ -47,7 +47,7 @@ export const navLinks = {
   main: [
     { label: "Home", href: "/" },
     { label: "About Us", href: "/about", hasMega: true, megaKey: "about" as const },
-    { label: "Products", href: "/products/plywood", hasMega: true, megaKey: "products" as const },
+    { label: "Products", href: "/products", hasMega: true, megaKey: "products" as const },
     { label: "Projects", href: "/projects" },
     { label: "Brands", href: "/brands" },
     { label: "Blog", href: "/blog" },
