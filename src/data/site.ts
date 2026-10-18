@@ -9,7 +9,7 @@ export const siteConfig = {
   email: "info@aarenintpro.com",
   whatsapp: "918884464444",
   address: "No. 342/8 NTY Layout, Mysore Rd. Bengaluru, INDIA – 560026",
-  hours: "0900 Hrs - 2100 Hrs (All days)",
+  hours: "10:00 AM - 7:00 PM (Monday to Saturday)",
   social: {
     facebook: "https://facebook.com/aarenintpro",
     instagram: "https://instagram.com/aarenintpro",

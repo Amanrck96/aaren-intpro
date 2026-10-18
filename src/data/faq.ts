@@ -51,7 +51,7 @@ export const faqItems: FAQItem[] = [
   {
     id: "8",
     question: "What are your showroom working hours?",
-    answer: "Our showroom at Mysore Road, Bengaluru is open from 0900 Hrs to 2100 Hrs, all days of the week. We recommend scheduling an appointment for dedicated consultation on large projects.",
+    answer: "Our showroom at Mysore Road, Bengaluru is open from 10:00 AM to 7:00 PM, Monday to Saturday. We recommend scheduling an appointment for dedicated consultation on large projects.",
     category: "General",
   },
   {
